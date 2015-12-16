@@ -1,0 +1,43 @@
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:sbslapo="http://typo3.org/ns/SBS/LaPo/ViewHelpers">
+
+<f:layout name="Bootstrap" />
+
+<f:section name="Title">
+    Details zur Nachricht anzeigen
+</f:section>
+
+<f:section name="NavigationBar">
+    <ul class="nav navbar-nav">
+        <li>
+            <f:link.action action="index" title="zurück"><span class="glyphicon glyphicon-chevron-left"></span> Zurück</f:link.action>
+        </li>
+        <li>
+            <f:link.action action="edit" arguments="{nachricht: nachricht}" title="Ändern"><span class="glyphicon glyphicon-pencil"></span> Ändern</f:link.action>
+        </li>
+    </ul>
+</f:section>
+
+<f:section name="Content">
+<div class="table-responsive">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Betreff:  <B>{nachricht.betreff}</B>
+        </div>
+    <table class="table table-striped">
+
+        <tr>
+            <th>Kurzinhalt</th>
+            <td><f:format.raw>{nachricht.inhaltkurz}</f:format.raw></td>
+        </tr>
+		<tr>
+			<th>Anfangsdatum</th>
+			<td>{nachricht.startartikel -> f:format.date(format: 'd.m.Y')}</td>
+		</tr>
+        <tr>
+            <th>Enddatum</th>
+            <td>{nachricht.endartikel -> f:format.date(format: 'd.m.Y')}</td>
+        </tr>
+	 </table>
+   </div>
+  </div>
+</f:section>

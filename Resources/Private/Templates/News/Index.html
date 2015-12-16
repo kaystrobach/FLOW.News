@@ -1,0 +1,113 @@
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:sbslapo="http://typo3.org/ns/SBS/LaPo/ViewHelpers"
+      xmlns:search="http://typo3.org/ns/KayStrobach/VisualSearch/ViewHelpers"
+      xmlns:custom="http://typo3.org/ns/KayStrobach/Custom/ViewHelpers"
+
+        >
+
+<f:layout name="Default" />
+
+<f:section name="Title">Liste der eingetragenen Nachrichten</f:section>
+
+<f:section name="NavigationBar">
+    <ul class="nav navbar-nav">
+        <li>
+            <f:link.action action="new" title="legt eine neue Nachricht an">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                <f:translate>News</f:translate>
+            </f:link.action>
+        </li>
+    </ul>
+</f:section>
+
+<f:section name="Content">
+
+
+    <custom:sort objects="{allNews}" as="sortedNews" sortBy="endDate" order="ASC" queryPartSortBy="sortingField" queryPartOrder="sortingOrder">
+        <f:widget.paginate objects="{sortedNews}" as="paginatedNews" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 5}">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <f:translate>Subject</f:translate>
+                        </th>
+                        <th>
+                            <f:translate>Teaser</f:translate>
+                        </th>
+                        <th>
+                            <f:translate>Publication date</f:translate>
+                        </th>
+                        <th>
+                            <f:translate>End of publication date</f:translate>
+                        </th>
+                    </tr>
+                    </thead>
+                    <f:for each="{paginatedNews}" as="news">
+                        <tr>
+                            <td>
+                                <f:link.action action="edit" arguments="{news: news}" title="Bearbeiten">
+                                    {news.subject}
+                                </f:link.action>
+                            </td>
+                            <td>
+                                <f:link.action action="edit" arguments="{nachricht: nachricht}" title="Bearbeiten">
+                                    <p>
+                                        <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.foreword} </f:format.stripTags></f:format.crop>
+                                    </p>
+                                    <p>
+                                        <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.content} </f:format.stripTags></f:format.crop>
+                                    </p>
+                              </f:link.action>
+                            </td>
+                            <td>
+                                {news.startDate -> f:format.date(format: 'd.m.Y')}
+                            </td>
+                            <td>
+                                {news.endDate -> f:format.date(format: 'd.m.Y')}
+                            </td>
+
+                            <!-- MODAL delete -->
+                            <div class="modal fade" id="{nachricht -> f:format.identifier()}-delete" tabindex="-1" role="dialog"  aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">Nachricht löschen?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Wollen Sie die Nachricht mit dem Betreff:
+                                            <strong>
+                                                {news.subject}
+                                            </strong>
+                                            vom
+                                            <strong>
+                                                {news.startDate -> f:format.date(format: 'd.m.Y')}
+                                            </strong>
+                                            bis
+                                            <strong>
+                                                {news.endDate -> f:format.date(format: 'd.m.Y')}
+                                            </strong>
+
+                                            wirklich löschen?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <f:form action="delete" object="{news}" objectName="news">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Abrechen</button>
+                                                <f:form.button type="submit" class="btn btn-danger">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                    Löschen
+                                                </f:form.button>
+                                            </f:form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </tr>
+                    </f:for>
+                </table>
+            </div>
+        </f:widget.paginate>
+    </custom:sort>
+
+</f:section>

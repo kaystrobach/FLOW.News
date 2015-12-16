@@ -6,6 +6,34 @@
 				<source>dummy</source>
 				<target>dummy</target>
 			</trans-unit>
+			 <trans-unit id="news" xml:space="preserve">
+                <source>News</source>
+                <target>Nachricht</target>
+            </trans-unit>
+            <trans-unit id="subject" xml:space="preserve">
+                <source>Subject</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="teaser" xml:space="preserve">
+                <source>Teaser</source>
+                <target>Anreißer</target>
+            </trans-unit>
+            <trans-unit id="startdate" xml:space="preserve">
+                <source>Publication date</source>
+                <target>Veröffentlichungsdatum</target>
+            </trans-unit>
+            <trans-unit id="enddate" xml:space="preserve">
+                <source>End of publication date</source>
+                <target>Ende der Veröffentlichung</target>
+            </trans-unit>
+            <trans-unit id="content" xml:space="preserve">
+                <source>Content</source>
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="save" xml:space="preserve">
+                <source>Save</source>
+                <target>Speichern</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -1,0 +1,28 @@
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:sbslapo="http://typo3.org/ns/SBS/LaPo/ViewHelpers">
+
+<f:layout name="Bootstrap" />
+
+<f:section name="Title">Details für eine neue Nachricht eingeben</f:section>
+
+<f:section name="NavigationBar">
+    <ul class="nav navbar-nav">
+        <li>
+            <f:link.action action="index" title="zurück"><span class="glyphicon glyphicon-chevron-left"></span> zurück</f:link.action>
+        </li>
+    </ul>
+</f:section>
+
+<f:section name="Content">
+    <f:form action="create" object="{news}" objectName="news" class="form-horizontal" additionalAttributes="{role:'form'}">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <f:render partial="Nachricht/Nachricht" arguments="{news: news}"/>
+            </div>
+        </div>
+
+        <f:form.button type="submit" class="btn btn-success  pull-right">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            <f:translate>Save</f:translate>
+        </f:form.button>
+    </f:form>
+</f:section>

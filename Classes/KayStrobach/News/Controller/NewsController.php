@@ -29,11 +29,11 @@ class NewsController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('news', $this->newsRepository->findAll());
+		$this->view->assign('allNews', $this->newsRepository->findAll());
 	}
 
 	/**
-	 * Anlegen einer neuen Nachricht durch Verwaltung
+	 * Anlegen einer neuen News durch Verwaltung
 	 * @return void
 	 */
 	public function newAction() {
@@ -78,13 +78,13 @@ class NewsController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	}
 
 	/**
-	 * Löschen der Nachricht durch Verwaltung
+	 * Löschen der News durch Verwaltung
 	 * @param News $news
 	 * @return void
 	 */
 	public function deleteAction(News $news) {
 		$this->newsRepository->remove($news);
-		$this->addFlashMessage('Die Nachricht wurde gelöscht.');
+		$this->addFlashMessage('Die News wurde gelöscht.');
 		$this->redirect('index');
 	}
 }

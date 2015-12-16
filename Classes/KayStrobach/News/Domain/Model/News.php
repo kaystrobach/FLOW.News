@@ -25,18 +25,18 @@ class News {
 	/**
 	 * @var string
 	 * @Flow\Validate(type="String")
-	 * @ORM\Column(type="text")
+	 * @ORM\Column(type="text", nullable=true)
 	 */
-	protected $foreword;
+	protected $foreword = '';
 
 	/**
 	 * @var string
 	 * @Flow\Validate(type="String")
 	 * @Flow\Validate(type="StringLength", options={ "minimum"=3 })
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"NewsContent"})
-	 * @ORM\Column(type="text")
+	 * @ORM\Column(type="text", nullable=true)
 	 */
-	protected $content;
+	protected $content = '';
 
 	/**
 	 * @var \DateTime
