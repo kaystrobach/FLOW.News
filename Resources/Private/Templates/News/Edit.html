@@ -1,6 +1,6 @@
 <html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:sbslapo="http://typo3.org/ns/SBS/LaPo/ViewHelpers" xmlns:ks="http://typo3.org/ns/KayStrobach/Custom/ViewHelpers"
       xmlns:kayCustom="http://typo3.org/ns/KayStrobach/Custom/ViewHelpers">
-<f:layout name="Bootstrap" />
+<f:layout name="Default" />
 
 <f:section name="Title">Details der Nachricht bearbeiten</f:section>
 
@@ -8,10 +8,6 @@
     <ul class="nav navbar-nav">
         <li>
             <f:link.action action="index" arguments="{news: news}"  title="Zurück"><span class="glyphicon glyphicon-chevron-left"></span> Zurück</f:link.action>
-        </li>
-        <li>
-            <f:link.action action="show" arguments="{news: news}" title="Anzeigen">
-                <span class="glyphicon glyphicon-star"></span> Anzeigen</f:link.action>
         </li>
     </ul>
 </f:section>

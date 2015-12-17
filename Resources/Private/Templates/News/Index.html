@@ -51,13 +51,17 @@
                                 </f:link.action>
                             </td>
                             <td>
-                                <f:link.action action="edit" arguments="{nachricht: nachricht}" title="Bearbeiten">
-                                    <p>
-                                        <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.foreword} </f:format.stripTags></f:format.crop>
-                                    </p>
-                                    <p>
-                                        <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.content} </f:format.stripTags></f:format.crop>
-                                    </p>
+                                <f:link.action action="edit" arguments="{news: news}" title="Bearbeiten">
+                                    <f:if condition="{news.foreword}">
+                                        <p>
+                                            <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.foreword} </f:format.stripTags></f:format.crop>
+                                        </p>
+                                    </f:if>
+                                    <f:if condition="{news.content}">
+                                        <p>
+                                            <f:format.crop maxCharacters="100" append="..."><f:format.stripTags>{news.content} </f:format.stripTags></f:format.crop>
+                                        </p>
+                                    </f:if>
                               </f:link.action>
                             </td>
                             <td>
