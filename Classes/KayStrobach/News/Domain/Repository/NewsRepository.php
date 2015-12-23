@@ -8,12 +8,19 @@ namespace KayStrobach\News\Domain\Repository;
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Persistence\Doctrine\Repository;
+use TYPO3\Flow\Persistence\QueryInterface;
 
 /**
  * @Flow\Scope("singleton")
  *
  */
 class NewsRepository extends Repository {
+	/**
+	 * @var array
+	 */
+	protected $defaultOrderings = array(
+		'startDate' => QueryInterface::ORDER_DESCENDING
+	);
 
 	/**
 	 * @return \TYPO3\Flow\Persistence\QueryResultInterface
