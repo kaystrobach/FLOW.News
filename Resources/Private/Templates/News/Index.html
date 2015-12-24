@@ -23,7 +23,7 @@
 <f:section name="Content">
 
 
-    <custom:sort objects="{allNews}" as="sortedNews" sortBy="endDate" order="ASC" queryPartSortBy="sortingField" queryPartOrder="sortingOrder">
+    <custom:sort objects="{allNews}" as="sortedNews" sortBy="endDate" order="DESC" queryPartSortBy="sortingField" queryPartOrder="sortingOrder">
         <f:widget.paginate objects="{sortedNews}" as="paginatedNews" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 5}">
             <div class="table-responsive">
                 <table class="table table-striped">
