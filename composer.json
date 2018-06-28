@@ -1,15 +1,20 @@
 {
-	"name":"kaystrobach/news",
-	"type":"typo3-flow-package",
-	"description":null,
-	"version":null,
-	"license": "MIT",
-	"require":{
-		"typo3/flow":"*"
-	},
-	"autoload":{
-		"psr-0":{
-			"KayStrobach\\News":"Classes"
-		}
-	}
+    "name": "kaystrobach/news",
+    "type": "typo3-flow-package",
+    "description": null,
+    "version": null,
+    "license": "MIT",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "KayStrobach\\News": "Classes"
+        }
+    },
+    "extra": {
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
+    }
 }
