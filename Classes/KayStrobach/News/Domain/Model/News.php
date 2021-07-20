@@ -7,7 +7,7 @@ namespace KayStrobach\News\Domain\Model;
  *                                                                        *
  *                                                                        */
 
-use Neos\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

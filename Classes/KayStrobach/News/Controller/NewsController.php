@@ -8,9 +8,9 @@ namespace KayStrobach\News\Controller;
  *                                                                        */
 
 use KayStrobach\News\Domain\Model\News;
-use Neos\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow;
 
-class NewsController extends \Neos\Flow\Mvc\Controller\ActionController {
+class NewsController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	/**
 	 * @Flow\Inject
 	 * @var \KayStrobach\News\Domain\Repository\NewsRepository

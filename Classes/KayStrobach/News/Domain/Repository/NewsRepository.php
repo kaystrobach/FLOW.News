@@ -6,9 +6,9 @@ namespace KayStrobach\News\Domain\Repository;
  *                                                                        *
  *                                                                        */
 
-use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Persistence\Doctrine\Repository;
-use Neos\Flow\Persistence\QueryInterface;
+use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Persistence\Doctrine\Repository;
+use TYPO3\Flow\Persistence\QueryInterface;
 
 /**
  * @Flow\Scope("singleton")
@@ -23,7 +23,7 @@ class NewsRepository extends Repository {
 	);
 
 	/**
-	 * @return \Neos\Flow\Persistence\QueryResultInterface
+	 * @return \TYPO3\Flow\Persistence\QueryResultInterface
 	 */
 	public function findVisible() {
 		$query = $this->createQuery();
