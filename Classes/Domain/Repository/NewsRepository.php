@@ -6,9 +6,9 @@ namespace KayStrobach\News\Domain\Repository;
  *                                                                        *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Persistence\Doctrine\Repository;
-use TYPO3\Flow\Persistence\QueryInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Persistence\Doctrine\Repository;
+use Neos\Flow\Persistence\QueryInterface;
 
 /**
  * @Flow\Scope("singleton")
